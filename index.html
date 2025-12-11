@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Quiz Hello Kitty</title>
+<link rel="stylesheet" href="style.css" />
+<script defer src="script.js"></script>
+</head>
+
+<body>
+
+    <!-- ESTRELAS -->
+    <div id="stars"></div>
+
+    <!-- =============================== -->
+    <!-- 🎀 TELA INICIAL -->
+    <!-- =============================== -->
+    <div class="tela" id="tela-inicial">
+        <h1 class="titulo">Quiz Hello Kitty</h1>
+
+        <div class="box-nome">
+            <label>Seu nome:</label>
+            <input id="input-nome" type="text" placeholder="Digite seu nome" />
+        </div>
+
+        <h3>Escolha a dificuldade:</h3>
+        <div class="dificuldades">
+            <button class="btn dificuldade" data-level="facil"> Fácil</button>
+            <button class="btn dificuldade" data-level="medio"> Médio</button>
+            <button class="btn dificuldade" data-level="dificil"> Difícil</button>
+        </div>
+
+        <h3>Escolha seu avatar:</h3>
+        <div class="avatar-selector">
+
+            <img src="kuromy.jpg" class="avatar-option" data-avatar="kuromy.jpg">
+            <img src="kitty.jpg" class="avatar-option" data-avatar="kitty.jpg">
+            <img src="mymelody.jpg" class="avatar-option" data-avatar="mymelody.jpg">
+            <img src="cinemorool.jpg" class="avatar-option" data-avatar="cinemorool.jpg">
+            <img src="keropi.jpg" class="avatar-option" data-avatar="keropi.jpg">
+
+        </div>
+
+        <button id="btn-iniciar" class="btn start">Começar 🎀</button>
+    </div>
+
+    <!-- =============================== -->
+    <!-- 🎀 TELA DO JOGO -->
+    <!-- =============================== -->
+    <div class="tela" id="tela-jogo" style="display:none">
+        <header>
+            <img id="player-avatar" src="kitty.jpg" class="avatar" />
+            <span id="player-name"></span>
+            <span id="player-lives"></span>
+            <span id="score"></span>
+            <span id="xp"></span>
+            <span id="timer"></span>
+        </header>
+
+        <div id="pergunta"></div>
+        <div id="opcoes" class="opcoes"></div>
+
+        <div class="progresso">
+            <div id="progress-bar"></div>
+        </div>
+
+        <canvas id="particles"></canvas>
+    </div>
+
+    <!-- =============================== -->
+    <!-- 🎀 TELA FINAL -->
+    <!-- =============================== -->
+    <div class="tela" id="tela-final" style="display:none">
+        <h2>Fim de jogo 🎀</h2>
+        <p id="resultado-jogador"></p>
+        <p id="resultado-pontuacao"></p>
+        <p id="resultado-xp"></p>
+
+        <h3>🏆 Ranking Local</h3>
+        <ul id="ranking"></ul>
+
+        <button id="btn-reiniciar" class="btn">Recomeçar 🔄</button>
+    </div>
+
+</body>
+</html>

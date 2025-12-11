@@ -1,0 +1,265 @@
+/* ================================
+   🎀 FONTE E RESET
+   ================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+}
+
+/* ================================
+   🎀 FUNDO COM IMAGEM
+   ================================ */
+body {
+    background: url("fundo.jpg") no-repeat center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ================================
+   🎀 TELAS (borda + fundo branco suave)
+   ================================ */
+.tela {
+    background: rgba(255, 255, 255, 0.616);
+    padding: 35px;
+    width: 90%;
+    max-width: 520px;
+    border-radius: 22px;
+
+    /* borda kawaii */
+    border: 4px solid #ff8ecb;
+    box-shadow: 0 0 25px rgba(255, 150, 200, 0.4);
+
+    text-align: center;
+}
+
+/* ================================
+   🎀 TÍTULO
+   ================================ */
+.titulo {
+    font-size: 32px;
+    color: #ff62b8;
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px #ffd3ee;
+}
+
+/* ================================
+   🎀 CAMPOS E BOTÕES
+   ================================ */
+.box-nome {
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #ff8ecb;
+    width: 80%;
+    outline: none;
+}
+
+.btn {
+    background-color: #ff8ecb;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #ff6eb7;
+    transform: scale(1.05);
+}
+
+/* dificuldade */
+.dificuldades {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.dificuldade.ativo {
+    background-color: #ff62b8;
+}
+
+/* ================================
+   🎀 AVATARES
+   ================================ */
+.avatar-selector {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.avatar-option {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 4px solid transparent;
+    cursor: pointer;
+
+    transition: 0.25s;
+    box-shadow: 0 6px 18px rgba(255, 150, 200, 0.22);
+}
+
+.avatar-option:hover {
+    transform: scale(1.1);
+}
+
+.avatar-option.selecionado {
+    border-color: #ff62b8;
+    transform: scale(1.18);
+    box-shadow: 0 0 15px rgba(255, 100, 170, 0.6);
+}
+
+/* avatar no jogo */
+.avatar {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 4px solid #ff8ecb;
+}
+
+/* ================================
+   🎀 HUD / PERGUNTAS
+   ================================ */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#pergunta {
+    font-size: 22px;
+    margin: 20px 0;
+    color: #444;
+}
+
+.opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.opcao {
+    padding: 12px;
+    background: #ffe2f2;
+    border: 2px solid #ff8ecb;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.opcao:hover {
+    background: #ffd0ec;
+    transform: scale(1.05);
+}
+
+/* cores ao acertar ou errar */
+.opcao.certo {
+    background: #b6ffa8;
+    border-color: #6fd868;
+}
+
+.opcao.errado {
+    background: #ffb6b6;
+    border-color: #e66868;
+}
+
+/* barra de progresso */
+.progresso {
+    width: 100%;
+    height: 12px;
+    background: #ffd6ec;
+    border-radius: 50px;
+    margin: 20px 0;
+}
+
+#progress-bar {
+    height: 100%;
+    background: #ff62b8;
+    width: 0%;
+    border-radius: 50px;
+    transition: width 0.4s ease;
+}
+
+/* ================================
+   🎀 GLITTER CANVAS
+   ================================ */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+/* Fonte estilo escrita fofa */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/* 🎀 TÍTULO ESTILO HELLO KITTY COM GLITTER */
+.titulo {
+    font-family: 'Pacifico', cursive;
+    font-size: 58px;
+    color: #ff1493; /* rosa forte */
+    text-align: center;
+
+    /* contorno branco grosso */
+    -webkit-text-stroke: 4px white;
+
+    /* brilho suave */
+    text-shadow: 
+        0 0 10px rgba(255, 105, 180, 0.6),
+        0 0 20px rgba(255, 105, 180, 0.4);
+
+    /* para aplicar animação glitter */
+    position: relative;
+    display: inline-block;
+    animation: glitterMove 3s linear infinite;
+}
+
+/* ✨ Animação do glitter */
+.titulo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: 
+        url('https://i.imgur.com/SHhYz2C.png') repeat; /* textura de glitter */
+    mix-blend-mode: screen;
+    opacity: 0.6;
+
+    animation: glitterSparkle 2s linear infinite;
+    pointer-events: none;
+}
+
+/* movimento suave do brilho */
+@keyframes glitterMove {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(1.35); }
+    100% { filter: brightness(1); }
+}
+
+/* cintilar */
+@keyframes glitterSparkle {
+    0% { background-position: 0px 0px; }
+    50% { background-position: 60px 40px; }
+    100% { background-position: 0px 0px; }
+}
